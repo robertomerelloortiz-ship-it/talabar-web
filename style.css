@@ -112,7 +112,7 @@ a { color: inherit; text-decoration: none; }
 .btn-outline:hover { background: rgba(247,244,238,0.1); }
 .hero-stats {
   margin-top: 3.5rem; display: flex; flex-wrap: wrap;
-  align-items: center; gap: 1.5rem;
+  align-items: baseline; gap: 1.5rem;
   color: rgba(247,244,238,0.75); font-size: 0.9rem;
 }
 .stat-num {
