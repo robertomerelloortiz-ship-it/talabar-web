@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Talabar Jerez — Restaurante en el centro de Jerez de la Frontera</title>
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -31,17 +32,21 @@
     "sameAs": ["https://www.instagram.com/talabar.jerez/"],"foundingDate": "2013"
   }</script>
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css">
+
 </head>
 <body>
+
 <header class="site-header">
   <div class="header-inner">
-    <a href="/" aria-label="Talabar Jerez · Inicio"><img src="assets/logo.png" alt="Talabar · Tapas y vinos" class="logo"></a>
+    <a href="/" aria-label="Talabar Jerez · Inicio">
+      <img src="assets/logo.png" alt="Talabar · Tapas y vinos" class="logo">
+    </a>
     <nav class="main-nav">
       <a href="/" class="nav-link active">Inicio</a>
       <a href="carta.html" class="nav-link">Carta</a>
       <a href="casa.html" class="nav-link">Casa</a>
       <a href="contacto.html" class="nav-link">Contacto</a>
-      </nav>
+    </nav>
     <a href="https://www.google.com/maps/reserve/v/dine/c/JcPCmgne7hU?source=pa&opi=89978449&hl=es-ES&gei=a0D_adntGJH-7M8Pyf-qqA4&sourceurl=https://www.google.com/search?q%3DTalabar%2BJerez%26stick%3DH4sIAAAAAAAA_-mgU1IxqEgxSEk2szQ0TbU0NjJMSbMyqLBINjWwNE1JMku2SDGxSDJaxMobkpiTmJRYpOCVWpRaBQB--NW2OAAAAA%26hl%3Des%26mat%3DCdPg5TbiYVehElcBTVDHnqG5Q6qwDD0koafIUenS075q8fnCwpQP_mUkiYWlAa-7-dK5sOdyFyAcqyFVtwDy60oJXaP-Bj78RO6tAwNab1A-1w59ZReJ9SiqOZ72VCgSKno%26authuser%3D0%26ved%3D2ahUKEwjGgpzRsKyUAxWfTqQEHT1LE_sQ-MgIegQIGRAm" class="btn-reservar" target="_blank" rel="noopener">Reservar</a>
     <button class="menu-toggle" aria-label="Menú" onclick="toggleMenu()">&#9776;</button>
   </div>
@@ -53,19 +58,27 @@
     <a href="https://www.google.com/maps/reserve/v/dine/c/JcPCmgne7hU?source=pa&opi=89978449&hl=es-ES&gei=a0D_adntGJH-7M8Pyf-qqA4&sourceurl=https://www.google.com/search?q%3DTalabar%2BJerez%26stick%3DH4sIAAAAAAAA_-mgU1IxqEgxSEk2szQ0TbU0NjJMSbMyqLBINjWwNE1JMku2SDGxSDJaxMobkpiTmJRYpOCVWpRaBQB--NW2OAAAAA%26hl%3Des%26mat%3DCdPg5TbiYVehElcBTVDHnqG5Q6qwDD0koafIUenS075q8fnCwpQP_mUkiYWlAa-7-dK5sOdyFyAcqyFVtwDy60oJXaP-Bj78RO6tAwNab1A-1w59ZReJ9SiqOZ72VCgSKno%26authuser%3D0%26ved%3D2ahUKEwjGgpzRsKyUAxWfTqQEHT1LE_sQ-MgIegQIGRAm" class="btn-reservar" style="margin-top:1rem;display:inline-block" target="_blank" rel="noopener">Reservar</a>
   </div>
 </header>
+
 <main>
-  <section class="hero">
-    <img src="assets/talabar-interior.webp" alt="Interior de Talabar Jerez con cuadros de tauromaquia y mesas de madera" class="hero-img" width="1600" height="900">
+
+  <!-- HERO con parallax -->
+  <section class="hero" id="hero-section">
+    <div class="hero-parallax" id="heroParallax">
+      <img src="assets/talabar-interior.webp" alt="Interior de Talabar Jerez con cuadros de tauromaquia y mesas de madera" class="hero-img" width="1600" height="900">
+    </div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <p class="eyebrow">Restaurante en el centro de Jerez de la Frontera · C/ Lancería 15 · Desde 2013</p>
-      <h1>Talabar: cocina <em>jerezana</em><br>en el centro de Jerez.</h1>
-      <p class="hero-sub">Tapas, guisos jerezanos al oloroso y vinos de Jerez en pleno centro histórico de Jerez de la Frontera. Cocina casera de producto, sin atajos, desde 2013.</p>
-      <div class="hero-ctas">
+      <p class="eyebrow reveal-fade" data-delay="0">Restaurante en el centro de Jerez de la Frontera · C/ Lancería 15 · Desde 2013</p>
+      <h1 class="reveal-split">
+        <span class="split-line" data-delay="200">Talabar: cocina <em>jerezana</em></span>
+        <span class="split-line" data-delay="400">en el centro de Jerez.</span>
+      </h1>
+      <p class="hero-sub reveal-fade" data-delay="600">Tapas, guisos jerezanos al oloroso y vinos de Jerez en pleno centro histórico de Jerez de la Frontera. Cocina casera de producto, sin atajos, desde 2013.</p>
+      <div class="hero-ctas reveal-fade" data-delay="800">
         <a href="https://www.google.com/maps/reserve/v/dine/c/JcPCmgne7hU?source=pa&opi=89978449&hl=es-ES&gei=a0D_adntGJH-7M8Pyf-qqA4&sourceurl=https://www.google.com/search?q%3DTalabar%2BJerez%26stick%3DH4sIAAAAAAAA_-mgU1IxqEgxSEk2szQ0TbU0NjJMSbMyqLBINjWwNE1JMku2SDGxSDJaxMobkpiTmJRYpOCVWpRaBQB--NW2OAAAAA%26hl%3Des%26mat%3DCdPg5TbiYVehElcBTVDHnqG5Q6qwDD0koafIUenS075q8fnCwpQP_mUkiYWlAa-7-dK5sOdyFyAcqyFVtwDy60oJXaP-Bj78RO6tAwNab1A-1w59ZReJ9SiqOZ72VCgSKno%26authuser%3D0%26ved%3D2ahUKEwjGgpzRsKyUAxWfTqQEHT1LE_sQ-MgIegQIGRAm" class="btn-primary" target="_blank" rel="noopener">Reservar mesa</a>
         <a href="carta.html" class="btn-outline">Ver la carta</a>
       </div>
-      <div class="hero-stats">
+      <div class="hero-stats reveal-fade" data-delay="1000">
         <div><span class="stat-num">4,3</span> ★ 1.129 reseñas</div>
         <div class="divider"></div>
         <div>10–20 € por persona</div>
@@ -75,10 +88,14 @@
     </div>
   </section>
 
+  <!-- HISTORIA con reveal desde lados -->
   <section class="historia">
     <div class="historia-inner">
-      <div class="historia-left"><p class="label">La casa</p><h2>Tapas, vinos<br>y Jerez.</h2></div>
-      <div class="historia-right">
+      <div class="historia-left reveal-left">
+        <p class="label">La casa</p>
+        <h2>Tapas, vinos<br>y Jerez.</h2>
+      </div>
+      <div class="historia-right reveal-right">
         <p>En el corazón de Jerez, junto a la Plaza del Arenal y el Gallo Azul, Talabar es el restaurante donde comer cocina jerezana de verdad: berza jerezana, carrillada al oloroso, tortillita de camarones y pescaíto frito fresco de la Bahía de Cádiz. Todo acompañado de los mejores vinos de Jerez.</p>
         <p>Una sala sobre la muralla almohade del siglo XII, en lo que fue la talabartería de la familia Duarte — proveedor oficial de la Casa Real de Alfonso XIII desde 1925 —, una barra de toda la vida y una terraza en el centro histórico de Jerez para ver pasar la ciudad.</p>
         <p class="quote">"Buen lugar para tapear, tomar una cerveza bien fría."</p>
@@ -86,36 +103,68 @@
     </div>
   </section>
 
+  <!-- PLATOS con stagger reveal -->
   <section class="platos">
     <div class="platos-inner">
-      <div class="platos-header"><p class="label">De la cocina</p><h2>Nuestros imprescindibles</h2></div>
-      <div class="platos-grid">
-        <article class="plato"><div class="plato-img-wrap"><img src="assets/dish-huevos-tartar.webp" alt="Huevos rotos Talabar" loading="lazy"></div><div class="plato-info"><h3>Huevos rotos Talabar</h3></div><p class="plato-desc">Tartar de atún rojo salvaje de almadraba Gadira con Patatas de Sanlúcar y Huevo.</p></article>
-        <article class="plato"><div class="plato-img-wrap"><img src="assets/dish-berza.webp" alt="Berza jerezana" loading="lazy"></div><div class="plato-info"><h3>Berza jerezana</h3></div><p class="plato-desc">Garbanzos, col, carnes y embutido. Horas al fuego, sin atajos.</p></article>
-        <article class="plato"><div class="plato-img-wrap"><img src="assets/dish-mix-pescaito.webp" alt="Mix de pescaíto frito" loading="lazy"></div><div class="plato-info"><h3>Mix de pescaíto frito</h3></div><p class="plato-desc">Fresco cada día de la Bahía de Cádiz. De la Plaza de Abastos a la mesa.</p></article>
-        <article class="plato"><div class="plato-img-wrap"><img src="assets/dish-huevos-jamon.webp" alt="Huevos rotos con jamón" loading="lazy"></div><div class="plato-info"><h3>Huevos rotos con jamón</h3></div><p class="plato-desc">Patata de Sanlúcar, Jamón Ibérico y dos Huevos. El Antojo perfecto.</p></article>
+      <div class="platos-header reveal-up">
+        <p class="label">De la cocina</p>
+        <h2>Nuestros imprescindibles</h2>
       </div>
-      <div class="platos-cta"><a href="carta.html" class="link-arrow">Ver carta completa →</a></div>
+      <div class="platos-grid">
+        <article class="plato reveal-stagger" data-delay="0">
+          <div class="plato-img-wrap">
+            <img src="assets/dish-huevos-tartar.webp" alt="Huevos rotos Talabar" loading="lazy">
+          </div>
+          <div class="plato-info"><h3>Huevos rotos Talabar</h3></div>
+          <p class="plato-desc">Tartar de atún rojo salvaje de almadraba Gadira con Patatas de Sanlúcar y Huevo.</p>
+        </article>
+        <article class="plato reveal-stagger" data-delay="100">
+          <div class="plato-img-wrap">
+            <img src="assets/dish-berza.webp" alt="Berza jerezana" loading="lazy">
+          </div>
+          <div class="plato-info"><h3>Berza jerezana</h3></div>
+          <p class="plato-desc">Garbanzos, col, carnes y embutido. Horas al fuego, sin atajos.</p>
+        </article>
+        <article class="plato reveal-stagger" data-delay="200">
+          <div class="plato-img-wrap">
+            <img src="assets/dish-mix-pescaito.webp" alt="Mix de pescaíto frito" loading="lazy">
+          </div>
+          <div class="plato-info"><h3>Mix de pescaíto frito</h3></div>
+          <p class="plato-desc">Fresco cada día de la Bahía de Cádiz. De la Plaza de Abastos a la mesa.</p>
+        </article>
+        <article class="plato reveal-stagger" data-delay="300">
+          <div class="plato-img-wrap">
+            <img src="assets/dish-huevos-jamon.webp" alt="Huevos rotos con jamón" loading="lazy">
+          </div>
+          <div class="plato-info"><h3>Huevos rotos con jamón</h3></div>
+          <p class="plato-desc">Patata de Sanlúcar, Jamón Ibérico y dos Huevos. El Antojo perfecto.</p>
+        </article>
+      </div>
+      <div class="platos-cta reveal-up">
+        <a href="carta.html" class="link-arrow">Ver carta completa →</a>
+      </div>
     </div>
   </section>
 
+  <!-- BODEGA con parallax en imagen -->
   <section class="bodega">
     <div class="bodega-inner">
-      <div class="bodega-img-col">
-        <img src="assets/talabar-bodega.webp" alt="Bodega de Talabar con vinos de Jerez" loading="lazy">
+      <div class="bodega-img-col reveal-left">
+        <div class="bodega-parallax-wrap">
+          <img src="assets/talabar-bodega.webp" alt="Bodega de Talabar con vinos de Jerez" loading="lazy" id="bodegaImg">
+        </div>
         <div class="bodega-quote">"Buena comida, buen servicio, buen ambiente."</div>
       </div>
-      <div class="bodega-text">
+      <div class="bodega-text reveal-right">
         <p class="label">La bodega</p>
-        <h2>Vinos del<br>Marco de Jerez.</h2>
+        <h2>Vinos de<br>Jerez.</h2>
         <p>Finos en rama, manzanilla, oloroso, amontillado, palo cortado y Pedro Ximénez. La bodega de la casa cuida cada copa para acompañar tu tapa.</p>
         <p class="muted">Y al lado, una terraza al sol para una caña bien fría —junto al edificio del Gallo Azul.</p>
-        <img src="assets/talabar-terraza.jpg" alt="Terraza de Talabar en el centro de Jerez" loading="lazy" class="terraza-img">
+        <img src="assets/talabar-terraza.jpg" alt="Terraza de Talabar en el centro de Jerez" loading="lazy" class="terraza-img reveal-up">
       </div>
     </div>
   </section>
 
-  
   <!-- RESEÑAS -->
   <section class="resenas">
     <div class="resenas-inner">
@@ -204,21 +253,151 @@
     </div>
   </section>
 
+  <!-- CTA -->
   <section class="cta-section">
-    <p class="label accent">Visítanos</p>
-    <h2>Te esperamos en Lancería.</h2>
-    <p class="cta-sub">C. Lancería, 15 · 11402 Jerez de la Frontera · Cocina abierta todos los días de 13:00 a 00:00</p>
-    <a href="https://www.google.com/maps/reserve/v/dine/c/JcPCmgne7hU?source=pa&opi=89978449&hl=es-ES&gei=a0D_adntGJH-7M8Pyf-qqA4&sourceurl=https://www.google.com/search?q%3DTalabar%2BJerez%26stick%3DH4sIAAAAAAAA_-mgU1IxqEgxSEk2szQ0TbU0NjJMSbMyqLBINjWwNE1JMku2SDGxSDJaxMobkpiTmJRYpOCVWpRaBQB--NW2OAAAAA%26hl%3Des%26mat%3DCdPg5TbiYVehElcBTVDHnqG5Q6qwDD0koafIUenS075q8fnCwpQP_mUkiYWlAa-7-dK5sOdyFyAcqyFVtwDy60oJXaP-Bj78RO6tAwNab1A-1w59ZReJ9SiqOZ72VCgSKno%26authuser%3D0%26ved%3D2ahUKEwjGgpzRsKyUAxWfTqQEHT1LE_sQ-MgIegQIGRAm" class="btn-primary" target="_blank" rel="noopener">Reservar mesa</a>
+    <p class="label accent reveal-up">Visítanos</p>
+    <h2 class="reveal-up" style="transition-delay:0.1s">Te esperamos en Lancería.</h2>
+    <p class="cta-sub reveal-up" style="transition-delay:0.2s">C. Lancería, 15 · 11402 Jerez de la Frontera · Cocina abierta todos los días de 13:00 a 00:00</p>
+    <a href="https://www.google.com/maps/reserve/v/dine/c/JcPCmgne7hU?source=pa&opi=89978449&hl=es-ES&gei=a0D_adntGJH-7M8Pyf-qqA4&sourceurl=https://www.google.com/search?q%3DTalabar%2BJerez%26stick%3DH4sIAAAAAAAA_-mgU1IxqEgxSEk2szQ0TbU0NjJMSbMyqLBINjWwNE1JMku2SDGxSDJaxMobkpiTmJRYpOCVWpRaBQB--NW2OAAAAA%26hl%3Des%26mat%3DCdPg5TbiYVehElcBTVDHnqG5Q6qwDD0koafIUenS075q8fnCwpQP_mUkiYWlAa-7-dK5sOdyFyAcqyFVtwDy60oJXaP-Bj78RO6tAwNab1A-1w59ZReJ9SiqOZ72VCgSKno%26authuser%3D0%26ved%3D2ahUKEwjGgpzRsKyUAxWfTqQEHT1LE_sQ-MgIegQIGRAm" class="btn-primary reveal-up" style="transition-delay:0.3s" target="_blank" rel="noopener">Reservar mesa</a>
   </section>
+
 </main>
+
 <footer class="site-footer">
   <div class="footer-inner">
-    <div><h3>Talabar Jerez</h3><p>Tapas de producto en el corazón de Jerez de la Frontera.</p></div>
-    <div><h4>Visítanos</h4><p>C. Lancería, 15<br>11402 Jerez de la Frontera, Cádiz<br><a href="tel:+34956349787">+34 956 34 97 87</a></p></div>
-    <div><h4>Horario</h4><p>Cocina abierta todos los días de 13:00 a 00:00<br>Comer allí · Para llevar</p></div>
+    <div>
+      <h3>Talabar Jerez</h3>
+      <p>Tapas de producto en el corazón de Jerez de la Frontera.</p>
+    </div>
+    <div>
+      <h4>Visítanos</h4>
+      <p>C. Lancería, 15<br>11402 Jerez de la Frontera, Cádiz<br><a href="tel:+34956349787">+34 956 34 97 87</a></p>
+    </div>
+    <div>
+      <h4>Horario</h4>
+      <p>Cocina abierta todos los días de 13:00 a 00:00<br>Comer allí · Para llevar</p>
+    </div>
   </div>
   <div class="footer-copy">© 2026 Talabar Jerez · Negocio de propietarias mujeres · <a href="/privacidad.html" style="color:inherit;opacity:0.6;text-decoration:underline">Privacidad y cookies</a></div>
 </footer>
-<script>function toggleMenu(){document.getElementById('mobileNav').classList.toggle('open');}</script>
+
+<style>
+/* ===== ANIMACIONES ===== */
+
+/* Parallax hero */
+.hero { position: relative; min-height: 92vh; display: flex; align-items: flex-end; overflow: hidden; }
+.hero-parallax { position: absolute; inset: -20% 0; will-change: transform; }
+.hero-parallax .hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+/* Reveal genérico */
+.reveal-fade,
+.reveal-up,
+.reveal-left,
+.reveal-right,
+.reveal-stagger,
+.split-line {
+  opacity: 0;
+  transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1), transform 0.9s cubic-bezier(0.16,1,0.3,1);
+}
+
+.reveal-fade { transform: none; }
+.reveal-up { transform: translateY(40px); }
+.reveal-left { transform: translateX(-50px); }
+.reveal-right { transform: translateX(50px); }
+.reveal-stagger { transform: translateY(35px); }
+.split-line { display: block; transform: translateY(60px); }
+
+/* Activos */
+.reveal-fade.in,
+.reveal-up.in,
+.reveal-left.in,
+.reveal-right.in,
+.reveal-stagger.in,
+.split-line.in {
+  opacity: 1;
+  transform: none;
+}
+
+/* Delays hero — aplicados via JS */
+
+/* Bodega imagen con overflow hidden para parallax interno */
+.bodega-parallax-wrap {
+  overflow: hidden;
+  position: relative;
+}
+.bodega-parallax-wrap img {
+  width: 100%;
+  will-change: transform;
+  transition: transform 0.1s linear;
+}
+
+/* Hover en platos más suave */
+.plato { transition: transform 0.5s cubic-bezier(0.16,1,0.3,1); }
+.plato:hover { transform: translateY(-6px); }
+.plato-img-wrap img { transition: transform 1.4s cubic-bezier(0.16,1,0.3,1); }
+.plato:hover .plato-img-wrap img { transform: scale(1.06); }
+
+/* Línea decorativa que se dibuja */
+.draw-line {
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: var(--wine, #5c1a1a);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.8s cubic-bezier(0.16,1,0.3,1) 0.3s;
+  margin-bottom: 1rem;
+}
+.draw-line.in { transform: scaleX(1); }
+</style>
+
+<script>
+function toggleMenu() {
+  document.getElementById('mobileNav').classList.toggle('open');
+}
+
+/* 1. PARALLAX HERO */
+const heroParallax = document.getElementById('heroParallax');
+window.addEventListener('scroll', () => {
+  const scrollY = window.scrollY;
+  if (heroParallax && scrollY < window.innerHeight * 1.5) {
+    heroParallax.style.transform = `translateY(${scrollY * 0.35}px)`;
+  }
+}, { passive: true });
+
+/* 2. PARALLAX BODEGA */
+const bodegaImg = document.getElementById('bodegaImg');
+window.addEventListener('scroll', () => {
+  if (!bodegaImg) return;
+  const rect = bodegaImg.closest('.bodega-parallax-wrap').getBoundingClientRect();
+  const center = rect.top + rect.height / 2 - window.innerHeight / 2;
+  bodegaImg.style.transform = `translateY(${center * 0.12}px)`;
+}, { passive: true });
+
+/* 3. SCROLL REVEAL con IntersectionObserver */
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const el = entry.target;
+      const delay = el.dataset.delay || 0;
+      setTimeout(() => el.classList.add('in'), parseInt(delay));
+      revealObserver.unobserve(el);
+    }
+  });
+}, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll(
+  '.reveal-fade, .reveal-up, .reveal-left, .reveal-right, .reveal-stagger, .split-line'
+).forEach(el => revealObserver.observe(el));
+
+/* 4. HERO ANIMACIÓN INICIAL al cargar */
+window.addEventListener('load', () => {
+  const heroEls = document.querySelectorAll('.hero .reveal-fade, .hero .split-line');
+  heroEls.forEach(el => {
+    const delay = parseInt(el.dataset.delay || 0);
+    setTimeout(() => el.classList.add('in'), delay + 300);
+  });
+});
+</script>
 </body>
 </html>
