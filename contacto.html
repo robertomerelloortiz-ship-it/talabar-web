@@ -34,34 +34,34 @@
 </header>
 <main>
   <div class="page-hero">
-    <p class="label">Reservas</p>
-    <h1>Reserva tu mesa</h1>
-    <p>Llámanos directamente o reserva online. Te atendemos personalmente y te guardamos el sitio que más te guste.</p>
+    <p class="label reveal-fade" data-delay="0">Reservas</p>
+    <h1 class="reveal-up" data-delay="150">Reserva tu mesa</h1>
+    <p class="reveal-fade" data-delay="300">Llámanos directamente o reserva online. Te atendemos personalmente y te guardamos el sitio que más te guste.</p>
   </div>
   <div class="contacto-grid">
-    <div class="contacto-cell">
+    <div class="contacto-cell reveal-stagger" data-delay="0">
       <p class="cell-label">Reserva online</p>
       <p class="cell-main" style="margin-bottom:1rem">+34 956 34 97 87</p>
       <a href="https://www.google.com/maps/reserve/v/dine/c/JcPCmgne7hU?source=pa&opi=89978449&hl=es-ES&gei=a0D_adntGJH-7M8Pyf-qqA4&sourceurl=https://www.google.com/search?q%3DTalabar%2BJerez%26stick%3DH4sIAAAAAAAA_-mgU1IxqEgxSEk2szQ0TbU0NjJMSbMyqLBINjWwNE1JMku2SDGxSDJaxMobkpiTmJRYpOCVWpRaBQB--NW2OAAAAA%26hl%3Des%26mat%3DCdPg5TbiYVehElcBTVDHnqG5Q6qwDD0koafIUenS075q8fnCwpQP_mUkiYWlAa-7-dK5sOdyFyAcqyFVtwDy60oJXaP-Bj78RO6tAwNab1A-1w59ZReJ9SiqOZ72VCgSKno%26authuser%3D0%26ved%3D2ahUKEwjGgpzRsKyUAxWfTqQEHT1LE_sQ-MgIegQIGRAm" class="btn-primary" style="font-size:0.7rem;padding:0.7rem 1.5rem;display:inline-block;margin-top:0.5rem" target="_blank" rel="noopener">Reservar mesa online</a>
       <p class="cell-sub">O llámanos directamente al <a href="tel:+34956349787">+34 956 34 97 87</a></p>
     </div>
-    <div class="contacto-cell">
+    <div class="contacto-cell reveal-stagger" data-delay="100">
       <p class="cell-label">Visítanos</p>
       <p class="cell-main">C. Lancería, 15<br>11402 Jerez de la Frontera<br>Cádiz</p>
       <p class="cell-sub"><a href="https://maps.google.com/?q=Talabar+Jerez+Lanceria+15" target="_blank" rel="noopener">Cómo llegar →</a></p>
     </div>
-    <div class="contacto-cell">
+    <div class="contacto-cell reveal-stagger" data-delay="200">
       <p class="cell-label">Horario</p>
       <p class="cell-main">Cocina abierta todos los días de 13:00 a 00:00</p>
       <p class="cell-sub">Comer allí · Para llevar</p>
     </div>
-    <div class="contacto-cell">
+    <div class="contacto-cell reveal-stagger" data-delay="300">
       <p class="cell-label">Síguenos</p>
       <p class="cell-main"><a href="https://instagram.com/talabar.jerez" target="_blank" rel="noopener">@talabar.jerez</a></p>
       <p class="cell-sub">Lo último de la cocina y la barra en Instagram.</p>
     </div>
   </div>
-  <div class="map-wrap">
+  <div class="map-wrap reveal-up" data-delay="0">
     <iframe title="Ubicación de Talabar Jerez" src="https://www.google.com/maps?q=Calle+Lanceria+15,+Jerez+de+la+Frontera&output=embed" loading="lazy"></iframe>
   </div>
 </main>
@@ -73,6 +73,61 @@
   </div>
   <div class="footer-copy">© 2026 Talabar Jerez · Negocio de propietarias mujeres · <a href="/privacidad.html" style="color:inherit;opacity:0.6;text-decoration:underline">Privacidad y cookies</a></div>
 </footer>
-<script>function toggleMenu(){document.getElementById('mobileNav').classList.toggle('open');}</script>
+
+
+<style>
+/* ===== ANIMACIONES ===== */
+.reveal-fade,
+.reveal-up,
+.reveal-left,
+.reveal-right,
+.reveal-stagger {
+  opacity: 0;
+  transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1), transform 0.9s cubic-bezier(0.16,1,0.3,1);
+}
+.reveal-fade { transform: none; }
+.reveal-up { transform: translateY(40px); }
+.reveal-left { transform: translateX(-50px); }
+.reveal-right { transform: translateX(50px); }
+.reveal-stagger { transform: translateY(35px); }
+
+.reveal-fade.in,
+.reveal-up.in,
+.reveal-left.in,
+.reveal-right.in,
+.reveal-stagger.in {
+  opacity: 1;
+  transform: none;
+}
+
+.draw-line {
+  display: block; width: 40px; height: 1px;
+  background: var(--wine, #5c1a1a);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 0.8s cubic-bezier(0.16,1,0.3,1) 0.3s;
+  margin-bottom: 1rem;
+}
+.draw-line.in { transform: scaleX(1); }
+</style>
+
+<script>
+function toggleMenu() {
+  document.getElementById('mobileNav').classList.toggle('open');
+}
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const el = entry.target;
+      const delay = el.dataset.delay || 0;
+      setTimeout(() => el.classList.add('in'), parseInt(delay));
+      revealObserver.unobserve(el);
+    }
+  });
+}, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll(
+  '.reveal-fade, .reveal-up, .reveal-left, .reveal-right, .reveal-stagger'
+).forEach(el => revealObserver.observe(el));
+</script>
 </body>
 </html>
