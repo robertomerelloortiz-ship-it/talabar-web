@@ -122,18 +122,17 @@ document.querySelectorAll(
 
 
 
+
 <!-- BOTÓN STICKY RESERVA MÓVIL -->
-<a href="https://www.google.com/maps/reserve/v/dine/c/JcPCmgne7hU?source=pa&opi=89978449&hl=es-ES&gei=a0D_adntGJH-7M8Pyf-qqA4&sourceurl=https://www.google.com/search?q%3DTalabar%2BJerez%26stick%3DH4sIAAAAAAAA_-mgU1IxqEgxSEk2szQ0TbU0NjJMSbMyqLBINjWwNE1JMku2SDGxSDJaxMobkpiTmJRYpOCVWpRaBQB--NW2OAAAAA%26hl%3Des%26mat%3DCdPg5TbiYVehElcBTVDHnqG5Q6qwDD0koafIUenS075q8fnCwpQP_mUkiYWlAa-7-dK5sOdyFyAcqyFVtwDy60oJXaP-Bj78RO6tAwNab1A-1w59ZReJ9SiqOZ72VCgSKno%26authuser%3D0%26ved%3D2ahUKEwjGgpzRsKyUAxWfTqQEHT1LE_sQ-MgIegQIGRAm" id="sticky-reserva" target="_blank" rel="noopener">Reservar mesa</a>
 <style>
 #sticky-reserva {
-  display: none;
   position: fixed;
   bottom: 1.2rem;
   left: 1rem;
   right: 1rem;
   z-index: 8888;
   background: #5c1a1a;
-  color: #f5f0e8 !important;
+  color: #f5f0e8;
   text-decoration: none;
   padding: 1rem;
   font-family: 'Inter', sans-serif;
@@ -142,86 +141,26 @@ document.querySelectorAll(
   letter-spacing: 0.18em;
   text-transform: uppercase;
   border-radius: 2px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.25);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.3);
   text-align: center;
   box-sizing: border-box;
-}
-@media (max-width: 768px) {
-  #sticky-reserva {
   display: none;
-  position: fixed;
-  bottom: 1.2rem;
-  left: 1rem;
-  right: 1rem;
-  z-index: 8888;
-  background: #5c1a1a;
-  color: #f5f0e8 !important;
-  text-decoration: none;
-  padding: 1rem;
-  font-family: 'Inter', sans-serif;
-  font-size: 0.75rem;
-  font-weight: 500;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  border-radius: 2px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.25);
-  text-align: center;
-  box-sizing: border-box;
-}
 }
 </style>
-
-<!-- BANNER DE COOKIES -->
-<div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:rgba(26,16,8,0.97);color:#f5f0e8;padding:1.2rem 1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;border-top:1px solid rgba(181,98,10,0.3);">
-  <p style="margin:0;font-size:0.82rem;line-height:1.6;max-width:700px;font-family:'Inter',sans-serif;color:rgba(247,244,238,0.85);">
-    Usamos cookies de <strong style="color:#f5f0e8">Google Analytics</strong> para entender cómo se usa la web y mejorarla. No usamos cookies publicitarias ni compartimos datos con terceros.
-    <a href="/privacidad.html" style="color:#b5620a;text-decoration:underline;margin-left:0.3rem">Más información</a>
-  </p>
-  <div style="display:flex;gap:0.75rem;flex-shrink:0">
-    <button onclick="rechazarCookies()" style="background:transparent;border:1px solid rgba(247,244,238,0.3);color:rgba(247,244,238,0.7);padding:0.55rem 1.2rem;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;border-radius:2px;font-family:'Inter',sans-serif;">Rechazar</button>
-    <button onclick="aceptarCookies()" style="background:#b5620a;border:none;color:#f5f0e8;padding:0.55rem 1.2rem;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;border-radius:2px;font-family:'Inter',sans-serif;">Aceptar</button>
-  </div>
-</div>
-
+<a href="https://www.google.com/maps/reserve/v/dine/c/JcPCmgne7hU?source=pa&opi=89978449&hl=es-ES&gei=a0D_adntGJH-7M8Pyf-qqA4&sourceurl=https://www.google.com/search?q%3DTalabar%2BJerez%26stick%3DH4sIAAAAAAAA_-mgU1IxqEgxSEk2szQ0TbU0NjJMSbMyqLBINjWwNE1JMku2SDGxSDJaxMobkpiTmJRYpOCVWpRaBQB--NW2OAAAAA%26hl%3Des%26mat%3DCdPg5TbiYVehElcBTVDHnqG5Q6qwDD0koafIUenS075q8fnCwpQP_mUkiYWlAa-7-dK5sOdyFyAcqyFVtwDy60oJXaP-Bj78RO6tAwNab1A-1w59ZReJ9SiqOZ72VCgSKno%26authuser%3D0%26ved%3D2ahUKEwjGgpzRsKyUAxWfTqQEHT1LE_sQ-MgIegQIGRAm" id="sticky-reserva" target="_blank" rel="noopener">Reservar mesa</a>
 <script>
 (function() {
-  // COOKIES - persiste entre páginas via localStorage
-  var consent = localStorage.getItem('talabar_cookie_consent');
-
-  function activarGTM() {
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
-    var f = document.getElementsByTagName('script')[0];
-    var j = document.createElement('script');
-    j.async = true;
-    j.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-5RXHSVJ4';
-    f.parentNode.insertBefore(j, f);
+  var btn = document.getElementById('sticky-reserva');
+  function check() {
+    if (window.innerWidth <= 768) {
+      btn.style.display = 'block';
+    } else {
+      btn.style.display = 'none';
+    }
   }
-
-  window.aceptarCookies = function() {
-    localStorage.setItem('talabar_cookie_consent', 'accepted');
-    document.getElementById('cookie-banner').style.display = 'none';
-    activarGTM();
-  };
-
-  window.rechazarCookies = function() {
-    localStorage.setItem('talabar_cookie_consent', 'rejected');
-    document.getElementById('cookie-banner').style.display = 'none';
-  };
-
-  if (consent === 'accepted') {
-    activarGTM();
-    // Ocultar banner — ya decidió
-    document.getElementById('cookie-banner').style.display = 'none';
-  } else if (consent === 'rejected') {
-    // Ya rechazó — no mostrar
-    document.getElementById('cookie-banner').style.display = 'none';
-  } else {
-    // Primera visita — mostrar tras 1s
-    setTimeout(function() {
-      document.getElementById('cookie-banner').style.display = 'flex';
-    }, 1000);
-  }
+  window.addEventListener('load', check);
+  window.addEventListener('resize', check);
+  check();
 })();
 </script>
 </body>
