@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" style="overflow-x:hidden">
 <head>
 
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
@@ -143,13 +143,13 @@ document.querySelectorAll(
   display: none;
   position: fixed;
   bottom: 1.2rem;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 1rem;
+  right: 1rem;
   z-index: 8888;
   background: #5c1a1a;
   color: #f5f0e8 !important;
   text-decoration: none;
-  padding: 1rem 2.5rem;
+  padding: 1rem;
   font-family: 'Inter', sans-serif;
   font-size: 0.75rem;
   font-weight: 500;
@@ -157,12 +157,31 @@ document.querySelectorAll(
   text-transform: uppercase;
   border-radius: 2px;
   box-shadow: 0 4px 24px rgba(0,0,0,0.25);
-  white-space: nowrap;
+  text-align: center;
+  box-sizing: border-box;
 }
 @media (max-width: 768px) {
   #sticky-reserva {
-    display: block;
-  }
+  display: none;
+  position: fixed;
+  bottom: 1.2rem;
+  left: 1rem;
+  right: 1rem;
+  z-index: 8888;
+  background: #5c1a1a;
+  color: #f5f0e8 !important;
+  text-decoration: none;
+  padding: 1rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.25);
+  text-align: center;
+  box-sizing: border-box;
+}
 }
 </style>
 
