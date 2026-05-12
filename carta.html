@@ -77,6 +77,40 @@
 </main>
 <footer class="site-footer"><div class="footer-inner"><div><h3>Talabar Jerez</h3><p>Tapas de producto en el corazón de Jerez de la Frontera.</p></div><div><h4>Visítanos</h4><p>C. Lancería, 15<br>11402 Jerez de la Frontera, Cádiz<br><a href="tel:+34956349787">+34 956 34 97 87</a></p></div><div><h4>Horario</h4><p>Cocina abierta todos los días de 13:00 a 00:00<br>Comer allí · Para llevar</p></div></div><div class="footer-copy">© 2026 Talabar Jerez · Negocio de propietarias mujeres · <a href="/privacidad.html" style="color:inherit;opacity:0.6;text-decoration:underline">Privacidad y cookies</a></div></footer><script>function toggleMenu(){document.getElementById('mobileNav').classList.toggle('open');}</script>
 
+
+
+
+
+<!-- BOTÓN STICKY RESERVA MÓVIL -->
+<a href="https://www.google.com/maps/reserve/v/dine/c/JcPCmgne7hU?source=pa&opi=89978449&hl=es-ES&gei=a0D_adntGJH-7M8Pyf-qqA4&sourceurl=https://www.google.com/search?q%3DTalabar%2BJerez%26stick%3DH4sIAAAAAAAA_-mgU1IxqEgxSEk2szQ0TbU0NjJMSbMyqLBINjWwNE1JMku2SDGxSDJaxMobkpiTmJRYpOCVWpRaBQB--NW2OAAAAA%26hl%3Des%26mat%3DCdPg5TbiYVehElcBTVDHnqG5Q6qwDD0koafIUenS075q8fnCwpQP_mUkiYWlAa-7-dK5sOdyFyAcqyFVtwDy60oJXaP-Bj78RO6tAwNab1A-1w59ZReJ9SiqOZ72VCgSKno%26authuser%3D0%26ved%3D2ahUKEwjGgpzRsKyUAxWfTqQEHT1LE_sQ-MgIegQIGRAm" id="sticky-reserva" target="_blank" rel="noopener">Reservar mesa</a>
+<style>
+#sticky-reserva {
+  display: none;
+  position: fixed;
+  bottom: 1.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 8888;
+  background: #5c1a1a;
+  color: #f5f0e8 !important;
+  text-decoration: none;
+  padding: 1rem 2.5rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.25);
+  white-space: nowrap;
+}
+@media (max-width: 768px) {
+  #sticky-reserva {
+    display: block;
+  }
+}
+</style>
+
 <!-- BANNER DE COOKIES -->
 <div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:rgba(26,16,8,0.97);color:#f5f0e8;padding:1.2rem 1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;border-top:1px solid rgba(181,98,10,0.3);">
   <p style="margin:0;font-size:0.82rem;line-height:1.6;max-width:700px;font-family:'Inter',sans-serif;color:rgba(247,244,238,0.85);">
@@ -84,18 +118,17 @@
     <a href="/privacidad.html" style="color:#b5620a;text-decoration:underline;margin-left:0.3rem">Más información</a>
   </p>
   <div style="display:flex;gap:0.75rem;flex-shrink:0">
-    <button onclick="rechazarCookies()" style="background:transparent;border:1px solid rgba(247,244,238,0.3);color:rgba(247,244,238,0.7);padding:0.55rem 1.2rem;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;border-radius:2px;font-family:'Inter',sans-serif;transition:border-color 0.2s" onmouseover="this.style.borderColor='rgba(247,244,238,0.6)'" onmouseout="this.style.borderColor='rgba(247,244,238,0.3)'">Rechazar</button>
-    <button onclick="aceptarCookies()" style="background:#b5620a;border:none;color:#f5f0e8;padding:0.55rem 1.2rem;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;border-radius:2px;font-family:'Inter',sans-serif;transition:background 0.2s" onmouseover="this.style.background='#9a520a'" onmouseout="this.style.background='#b5620a'">Aceptar</button>
+    <button onclick="rechazarCookies()" style="background:transparent;border:1px solid rgba(247,244,238,0.3);color:rgba(247,244,238,0.7);padding:0.55rem 1.2rem;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;border-radius:2px;font-family:'Inter',sans-serif;">Rechazar</button>
+    <button onclick="aceptarCookies()" style="background:#b5620a;border:none;color:#f5f0e8;padding:0.55rem 1.2rem;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;border-radius:2px;font-family:'Inter',sans-serif;">Aceptar</button>
   </div>
 </div>
 
 <script>
-// Gestión de consentimiento de cookies
 (function() {
+  // COOKIES - persiste entre páginas via localStorage
   var consent = localStorage.getItem('talabar_cookie_consent');
 
   function activarGTM() {
-    // Activar Google Tag Manager
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
     var f = document.getElementsByTagName('script')[0];
@@ -107,7 +140,6 @@
 
   window.aceptarCookies = function() {
     localStorage.setItem('talabar_cookie_consent', 'accepted');
-    localStorage.setItem('talabar_cookie_date', new Date().toISOString());
     document.getElementById('cookie-banner').style.display = 'none';
     activarGTM();
   };
@@ -119,71 +151,17 @@
 
   if (consent === 'accepted') {
     activarGTM();
-  } else if (consent === null) {
-    // Primera visita — mostrar banner tras 1 segundo
-    window.addEventListener('DOMContentLoaded', function() {
-      setTimeout(function() {
-        document.getElementById('cookie-banner').style.display = 'flex';
-      }, 1000);
-    });
+    // Ocultar banner — ya decidió
+    document.getElementById('cookie-banner').style.display = 'none';
+  } else if (consent === 'rejected') {
+    // Ya rechazó — no mostrar
+    document.getElementById('cookie-banner').style.display = 'none';
+  } else {
+    // Primera visita — mostrar tras 1s
+    setTimeout(function() {
+      document.getElementById('cookie-banner').style.display = 'flex';
+    }, 1000);
   }
-  // Si consent === 'rejected' no hacemos nada
-})();
-</script>
-
-<!-- BOTÓN STICKY RESERVA MÓVIL -->
-<div id="sticky-reserva" style="
-  display: none;
-  position: fixed;
-  bottom: 0; left: 0; right: 0;
-  z-index: 8888;
-  padding: 0.9rem 1.2rem;
-  background: rgba(245,240,232,0.97);
-  border-top: 1px solid rgba(92,26,26,0.12);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-">
-  <a href="https://www.google.com/maps/reserve/v/dine/c/JcPCmgne7hU?source=pa&opi=89978449&hl=es-ES&gei=a0D_adntGJH-7M8Pyf-qqA4&sourceurl=https://www.google.com/search?q%3DTalabar%2BJerez%26stick%3DH4sIAAAAAAAA_-mgU1IxqEgxSEk2szQ0TbU0NjJMSbMyqLBINjWwNE1JMku2SDGxSDJaxMobkpiTmJRYpOCVWpRaBQB--NW2OAAAAA%26hl%3Des%26mat%3DCdPg5TbiYVehElcBTVDHnqG5Q6qwDD0koafIUenS075q8fnCwpQP_mUkiYWlAa-7-dK5sOdyFyAcqyFVtwDy60oJXaP-Bj78RO6tAwNab1A-1w59ZReJ9SiqOZ72VCgSKno%26authuser%3D0%26ved%3D2ahUKEwjGgpzRsKyUAxWfTqQEHT1LE_sQ-MgIegQIGRAm" target="_blank" rel="noopener" style="
-    display: block;
-    background: #5c1a1a;
-    color: #f5f0e8;
-    text-align: center;
-    padding: 1rem;
-    font-family: 'Inter', sans-serif;
-    font-size: 0.75rem;
-    font-weight: 500;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    text-decoration: none;
-    border-radius: 2px;
-  ">Reservar mesa</a>
-</div>
-
-<script>
-(function() {
-  var sticky = document.getElementById('sticky-reserva');
-  var hero = document.querySelector('.hero-ctas, .btn-primary');
-  var lastScroll = 0;
-
-  function isMobile() { return window.innerWidth <= 768; }
-
-  function updateSticky() {
-    if (!isMobile()) { sticky.style.display = 'none'; return; }
-    var scrollY = window.scrollY;
-    var heroBottom = hero ? hero.getBoundingClientRect().bottom + scrollY : 400;
-
-    // Mostrar cuando el botón principal ya no es visible
-    if (scrollY > heroBottom) {
-      sticky.style.display = 'block';
-    } else {
-      sticky.style.display = 'none';
-    }
-    lastScroll = scrollY;
-  }
-
-  window.addEventListener('scroll', updateSticky, { passive: true });
-  window.addEventListener('resize', updateSticky);
-  updateSticky();
 })();
 </script>
 </body>
