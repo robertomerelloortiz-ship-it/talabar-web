@@ -130,5 +130,61 @@
   // Si consent === 'rejected' no hacemos nada
 })();
 </script>
+
+<!-- BOTÓN STICKY RESERVA MÓVIL -->
+<div id="sticky-reserva" style="
+  display: none;
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 8888;
+  padding: 0.9rem 1.2rem;
+  background: rgba(245,240,232,0.97);
+  border-top: 1px solid rgba(92,26,26,0.12);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+">
+  <a href="https://www.google.com/maps/reserve/v/dine/c/JcPCmgne7hU?source=pa&opi=89978449&hl=es-ES&gei=a0D_adntGJH-7M8Pyf-qqA4&sourceurl=https://www.google.com/search?q%3DTalabar%2BJerez%26stick%3DH4sIAAAAAAAA_-mgU1IxqEgxSEk2szQ0TbU0NjJMSbMyqLBINjWwNE1JMku2SDGxSDJaxMobkpiTmJRYpOCVWpRaBQB--NW2OAAAAA%26hl%3Des%26mat%3DCdPg5TbiYVehElcBTVDHnqG5Q6qwDD0koafIUenS075q8fnCwpQP_mUkiYWlAa-7-dK5sOdyFyAcqyFVtwDy60oJXaP-Bj78RO6tAwNab1A-1w59ZReJ9SiqOZ72VCgSKno%26authuser%3D0%26ved%3D2ahUKEwjGgpzRsKyUAxWfTqQEHT1LE_sQ-MgIegQIGRAm" target="_blank" rel="noopener" style="
+    display: block;
+    background: #5c1a1a;
+    color: #f5f0e8;
+    text-align: center;
+    padding: 1rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 2px;
+  ">Reservar mesa</a>
+</div>
+
+<script>
+(function() {
+  var sticky = document.getElementById('sticky-reserva');
+  var hero = document.querySelector('.hero-ctas, .btn-primary');
+  var lastScroll = 0;
+
+  function isMobile() { return window.innerWidth <= 768; }
+
+  function updateSticky() {
+    if (!isMobile()) { sticky.style.display = 'none'; return; }
+    var scrollY = window.scrollY;
+    var heroBottom = hero ? hero.getBoundingClientRect().bottom + scrollY : 400;
+
+    // Mostrar cuando el botón principal ya no es visible
+    if (scrollY > heroBottom) {
+      sticky.style.display = 'block';
+    } else {
+      sticky.style.display = 'none';
+    }
+    lastScroll = scrollY;
+  }
+
+  window.addEventListener('scroll', updateSticky, { passive: true });
+  window.addEventListener('resize', updateSticky);
+  updateSticky();
+})();
+</script>
 </body>
 </html>
