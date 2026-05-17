@@ -121,8 +121,9 @@
 <script>function toggleMenu(){document.getElementById('mobileNav').classList.toggle('open');}</script>
 
 
+
 <!-- BANNER DE COOKIES -->
-<div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:rgba(26,16,8,0.97);color:#f5f0e8;padding:1.2rem 1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;border-top:1px solid rgba(181,98,10,0.3);">
+<div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:rgba(26,16,8,0.97);color:#f5f0e8;padding:1.2rem 1.5rem;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;border-top:1px solid rgba(181,98,10,0.3);">
   <p style="margin:0;font-size:0.82rem;line-height:1.6;max-width:700px;font-family:'Inter',sans-serif;color:rgba(247,244,238,0.85);">
     Usamos cookies de <strong style="color:#f5f0e8">Google Analytics</strong> para entender cómo se usa la web y mejorarla.
     <a href="/privacidad.html" style="color:#b5620a;text-decoration:underline;margin-left:0.3rem">Más información</a>
@@ -134,14 +135,17 @@
 </div>
 <script>
 (function() {
-  if (!localStorage.getItem('talabar_cookie_consent')) {
-    setTimeout(function() {
-      var b = document.getElementById('cookie-banner');
-      if (b) b.style.display = 'flex';
-    }, 1000);
-  }
+  try {
+    var consent = localStorage.getItem('talabar_cookie_consent');
+    if (!consent) {
+      setTimeout(function() {
+        var b = document.getElementById('cookie-banner');
+        if (b) b.style.display = 'flex';
+      }, 1000);
+    }
+  } catch(e) {}
   window.cerrarCookies = function() {
-    localStorage.setItem('talabar_cookie_consent', 'done');
+    try { localStorage.setItem('talabar_cookie_consent', 'done'); } catch(e) {}
     var b = document.getElementById('cookie-banner');
     if (b) b.style.display = 'none';
   };
