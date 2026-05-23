@@ -1,5 +1,6 @@
 /* ===== RESET & BASE ===== */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { overflow-x: hidden; }
 html { scroll-behavior: smooth; }
 body {
   overflow-x: hidden;
@@ -129,7 +130,7 @@ a { color: inherit; text-decoration: none; }
 @media (max-width: 600px) { .divider { display: none; } }
 
 /* ===== HISTORIA ===== */
-.historia { padding: 7rem 1.5rem; max-width: 1000px; margin: 0 auto; }
+.historia { padding: 7rem 1.5rem; max-width: 1000px; margin: 0 auto; overflow: hidden; }
 .historia-inner { display: grid; grid-template-columns: 2fr 3fr; gap: 3rem; align-items: start; }
 .label {
   font-size: 0.65rem; letter-spacing: 0.4em; text-transform: uppercase;
@@ -180,7 +181,7 @@ a { color: inherit; text-decoration: none; }
 .link-arrow:hover { color: var(--wine); }
 
 /* ===== BODEGA ===== */
-.bodega { padding: 7rem 1.5rem; }
+.bodega { padding: 7rem 1.5rem; overflow: hidden; }
 .bodega-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
 @media (max-width: 800px) { .bodega-inner { grid-template-columns: 1fr; } }
 .bodega-img-col { position: relative; }
