@@ -55,7 +55,7 @@
     .privacidad-body a { color: #5c1a1a; }
   </style>
 </head>
-<body>
+<body style="overflow-x:hidden">
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5RXHSVJ4"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -150,6 +150,11 @@
     if (b) b.style.display = 'none';
   };
 })();
+  // Sticky header shadow on scroll
+  const siteHeader = document.querySelector(".site-header");
+  window.addEventListener("scroll", () => {
+    siteHeader.classList.toggle("scrolled", window.scrollY > 10);
+  }, { passive: true });
 </script>
 </body>
 </html>
